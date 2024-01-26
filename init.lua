@@ -195,16 +195,26 @@ require('lazy').setup({
     name = 'catppuccin',
     priority = 1000,
     opts = {
-      flavour = 'macchiatto',
+      flavour = 'macchiato',
       integrations = {
         mason = false,
+        nvimtree = true,
         treesitter = true,
         telescope = { enabled = true },
       },
     },
     config = function()
-      vim.cmd.colorscheme 'catppuccin'
+      vim.cmd.colorscheme 'catppuccin-macchiato'
     end,
+  },
+  {
+    'nvim-tree/nvim-tree.lua',
+    version = '*',
+    lazy = false,
+    dependencies = {
+     'nvim-tree/nvim-web-devicons',
+    },
+    opts = {},
   },
   {
     -- Set lualine as statusline
